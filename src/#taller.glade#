@@ -114,10 +114,8 @@
                         </child>
                         <child>
                           <object class="GtkImageMenuItem" id="imagemenuitem5">
-                            <property name="label">gtk-quit</property>
                             <property name="visible">True</property>
                             <property name="can_focus">False</property>
-                            <property name="use_underline">True</property>
                             <property name="use_stock">True</property>
                             <signal name="activate" handler="on_imagemenuitem5_activate" swapped="no"/>
                           </object>
@@ -1693,7 +1691,6 @@
                 <property name="use_stock">True</property>
                 <property name="image_position">top</property>
                 <property name="always_show_image">True</property>
-                <signal name="clicked" handler="on_btnImprimir_clicked" swapped="no"/>
               </object>
               <packing>
                 <property name="left_attach">1</property>

@@ -66,7 +66,8 @@ class main:
         self.listaVentas = b.get_object("listVentas")
         self.btnImprimir = b.get_object("btnImprimir")
         self.menubar = b.get_object("menubar")
-         
+        self.comboboxProvincia=b.get_object("comboboxProvincia")
+        self.listProvincias=b.get_object("listProvincias")
         
         self.ventanaPrincipal.show()
         clientes.mostrar(self.listCliente, self.trewCliente)
@@ -185,7 +186,19 @@ class main:
         
     def on_btnNeocli_clicked(self, widget, data=None):
         self.ventanaNeocli.show()
+        self.cargarpreg()
         self.pub = "no"
+    
+    def cargarpreg(self,widet):
+        if(self.comboboxProvincia==None):
+            cursor=bd.cursor()
+            sql="SELECT * FROM provincias"
+            cursor.execute(sql)
+            datos=cursor.fetchall()
+            for fila in datos:
+                self.listProvincias.append([fila[1]])
+                
+        
 
     def on_btnSalir_clicked(self, widget):
         Gtk.main_quit()
